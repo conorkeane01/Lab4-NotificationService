@@ -2,8 +2,10 @@ FROM openjdk:21-jdk-oracle
 
 WORKDIR /app
 
-COPY target/NotificationService-0.0.1-SNAPSHOT.jar /app
+COPY target/Week11Example-0.0.1-SNAPSHOT.jar /app
 
 EXPOSE 8083
 
-CMD ["java", "-jar", "NotificationService-0.0.1-SNAPSHOT.jar"]
+ENV SERVICE_NETWORK=my_network
+
+CMD ["java", "-jar", "Week11Example-0.0.1-SNAPSHOT.jar"]
