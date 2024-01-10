@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  create_person:
+    image: create_person:latest
+    ports:
+      - '8081:8081'
+    networks:
+      - my_network
+
+  delete_person:
+    image: delete_person:latest
+    ports:
+      - '8083:8083'
+    networks:
+      - my_network
+
+  cicd-front-end:
+    image: frontendperson:latest
+    ports:
+      - '3000:3000'
+    networks:
+      - my_network
+
+networks:
+  my_network:
+    driver: bridge
